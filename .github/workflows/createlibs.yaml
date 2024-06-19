@@ -1,9 +1,7 @@
 name: Create libs
 
-on:
-  push:
-    paths:
-    - '.github/workflows/createlibs.yaml'
+on: workflow_dispatch
+
 
 permissions:
   contents: write
@@ -34,4 +32,6 @@ jobs:
         CARGO_TARGET_DIR : ./target
 
     - name: Output target directory
-      run: ls target/
+      run: 
+        ls target/release
+        ls target/aarch64-apple-darwin 
