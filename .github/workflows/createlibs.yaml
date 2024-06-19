@@ -37,9 +37,9 @@ jobs:
         ls target/aarch64-apple-darwin 
 
     - name: Upload Release Assets
-        uses: glentiki/xbin-release-action@736088fa1388541bd9224f2749445ee3bd8890a5 # v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.build_and_install_rust_library. }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          assets_path: ./target/*
+      uses: glentiki/xbin-release-action@736088fa1388541bd9224f2749445ee3bd8890a5 # v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.build_and_install_rust_library. }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+        assets_path: ./target/*
