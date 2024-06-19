@@ -32,6 +32,6 @@ jobs:
         CARGO_TARGET_DIR : ./target
 
     - name: Output target directory
-      run: 
+      run: |
         ls target/release
         ls target/aarch64-apple-darwin 
